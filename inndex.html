@@ -862,10 +862,10 @@ function screenPulse(color){
 function addTime(sec){clockStart=Math.min(clockStart+sec*1000,performance.now());flashTimeBonus();}
 function checkComboMilestone(combo){
   const xt=diffKey==='extreme';
-  if(combo===5)     {sfxCombo5();   flashComboMilestone('5 COMBO! ✨','#f0d060');                                          addGauge(3); if(xt)addTime(1);}
-  else if(combo===10){sfxCombo10(); flashComboMilestone('10 COMBO! 💜','#c8a0e0');screenPulse('rgba(104,64,160,.35)');     addGauge(6); if(xt)addTime(1);}
-  else if(combo===20){sfxCombo20(); flashComboMilestone('20 COMBO! 🔥','#ff8c00');screenPulse('rgba(200,80,0,.3)');        addGauge(10);if(xt)addTime(1);}
-  else if(combo>=30&&combo%10===0){sfxComboMax();flashComboMilestone('MAX POWER! 👑','#f0d060');screenPulse('rgba(200,160,0,.35)');addGauge(6);if(xt)addTime(1);}
+  if(combo===5)     {sfxCombo5();   flashComboMilestone('5 COMBO! ✨','#f0d060');                                          addGauge(3); if(xt)addTime(0.5);}
+  else if(combo===10){sfxCombo10(); flashComboMilestone('10 COMBO! 💜','#c8a0e0');screenPulse('rgba(104,64,160,.35)');     addGauge(6); if(xt)addTime(0.5);}
+  else if(combo===20){sfxCombo20(); flashComboMilestone('20 COMBO! 🔥','#ff8c00');screenPulse('rgba(200,80,0,.3)');        addGauge(10);if(xt)addTime(0.5);}
+  else if(combo>=30&&combo%10===0){sfxComboMax();flashComboMilestone('MAX POWER! 👑','#f0d060');screenPulse('rgba(200,160,0,.35)');addGauge(6);if(xt)addTime(0.5);}
 }
 const sfxFanfare=(s)=>{if(s===3){[523,659,784,1047].forEach((f,i)=>setTimeout(()=>tone(f,'sine',.25,.28),i*120));setTimeout(()=>tone(1047,'sine',.5,.28),480);}else if(s===2){[440,554,659].forEach((f,i)=>setTimeout(()=>tone(f,'sine',.22,.25),i*110));}else{tone(330,'sine',.15,.18);setTimeout(()=>tone(294,'sine',.2,.18),150);}};
 
